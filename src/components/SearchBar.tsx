@@ -1,14 +1,17 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
+import { useState, FormEvent, ChangeEvent } from "react";
 
-const SearchBar = ({ onSubmit }) => {
-  const [query, setQuery] = useState("");
+interface SearchBarProps {
+  onSubmit: (query: string) => void;
+}
 
-  const handleChange = (event) => {
+const SearchBar = ({ onSubmit }: SearchBarProps) => {
+  const [query, setQuery] = useState<string>("");
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (query.trim() === "") {
       return alert("Can not be empty");
@@ -35,10 +38,6 @@ const SearchBar = ({ onSubmit }) => {
       </form>
     </header>
   );
-};
-
-SearchBar.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
 };
 
 export default SearchBar;
