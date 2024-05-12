@@ -14,7 +14,8 @@ const SearchBar = ({ onSubmit }: SearchBarProps) => {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (query.trim() === "") {
-      return alert("Can not be empty");
+      alert("Can not be empty");
+      return;
     }
     onSubmit(query);
   };
