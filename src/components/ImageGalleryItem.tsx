@@ -1,12 +1,7 @@
-export interface Image {
-  id: string;
-  webformatURL: string;
-  tags: string;
-  largeImageURL: string;
-}
+import { ImageData } from "../services/ImagesPixabay";
 
 interface ImageGalleryItemProps {
-  image: Image;
+  image: ImageData;
   onClick: (url: string, tags: string) => void;
 }
 

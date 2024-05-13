@@ -1,8 +1,8 @@
+import { ImageData } from "../services/ImagesPixabay";
 import ImageGalleryItem from "./ImageGalleryItem";
-import { Image } from "./ImageGalleryItem";
 
 interface ImageGalleryProps {
-  images: Image[];
+  images: ImageData[];
   onImageClick: (url: string, tags: string) => void;
 }
 

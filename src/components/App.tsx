@@ -4,11 +4,10 @@ import ImageGallery from "./ImageGallery";
 import Button from "./Button";
 import CustomLoader from "./CustomLoader";
 import Modal from "./Modal";
-import { getImg } from "../services/api";
-import { Image } from "./ImageGalleryItem";
+import { ImageData, getImg } from "../services/ImagesPixabay";
 
 const App = () => {
-  const [images, setImages] = useState<Image[]>([]);
+  const [images, setImages] = useState<ImageData[]>([]);
   const [query, setQuery] = useState<string>("");
   const [page, setPage] = useState<number>(1);
   const [largeImageURL, setLargeImageURL] = useState<string>("");
